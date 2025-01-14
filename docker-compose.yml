@@ -1,5 +1,11 @@
 version: "3.0"
 services:
+  haproxy:
+    build: ./haproxy
+    ports:
+      - "80:80"
+    networks:
+      - app_network
   reader1:
     build: ./readers/
     container_name: reader1
